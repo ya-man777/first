@@ -1,4 +1,4 @@
-/*
+    /*
 This is the c configuration file for the keymap
 
 Copyright 2022 @Yowkees
