@@ -62,7 +62,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifdef OLED_ENABLE
 
-#    include "lib/oledkit/oledkit.h"
+#include "lib/oledkit/oledkit.h"
 
 static const char PROGMEM qmk_logo[] = {
     0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8A, 0x8B, 0x8C, 0x8D, 0x8E, 0x8F, 0x90, 0x91, 0x92, 0x93, 0x94,
@@ -118,7 +118,7 @@ void oledkit_render_info_user(void) {
   //  keyball_oled_render_keyinfo();
   //  keyball_oled_render_ballinfo();
   //  keyball_oled_render_layerinfo();
-    switch (get_highest_layer(layer_state)) {
+    switch (get_highest_layer(state)) {
         case 0: // デフォルトレイヤーのときはPCとの疎通チェックのために特別な画像を表示
             oled_write_P(qmk_logo_connect, false);
             break;
@@ -144,7 +144,5 @@ void oledkit_render_info_user(void) {
             oled_write_P(qmk_logo, false);
             break;
     }
-
-  
 }
 #endif
