@@ -115,9 +115,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void oledkit_render_info_user(void) {
-  //  keyball_oled_render_keyinfo();
-  //  keyball_oled_render_ballinfo();
-  //  keyball_oled_render_layerinfo();
+    keyball_oled_render_keyinfo();
+    keyball_oled_render_ballinfo();
+    keyball_oled_render_layerinfo();
     switch (get_highest_layer(layer_state)) {
         case 0: // デフォルトレイヤーのときはPCとの疎通チェックのために特別な画像を表示
             oled_write_P(qmk_logo_connect, false);
